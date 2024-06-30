@@ -16,22 +16,18 @@ const UseMemo = () => {
     return num * 2;
   };
 
-  //     useEffect(()=>{
-  // setValueChange(slowFunction(number))
-  //     },[number])
-
   const doubleNumber = useMemo(() => slowFunction(number), [number]);
 
   return (
-    <div>
+    <div className='flex flex-col gap-4 p-4'>
       <input
-        className='bg-gray-300 text-white'
+        className='bg-gray-300 text-white p-2 rounded'
         type='number'
         value={number}
         onChange={(e) => setNumber(Number(e.target.value))}
       />
       <button
-        className='bg-gray-300 text-white'
+        className='bg-gray-300 text-white p-2 rounded'
         onClick={() =>
           setTheme((curr) => (curr === 'light' ? 'dark' : 'light'))
         }
